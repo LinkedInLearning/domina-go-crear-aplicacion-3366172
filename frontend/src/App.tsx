@@ -7,7 +7,11 @@ function App() {
   const [count, setCount] = useState(0)
 
   const fetchData = () => {
-    fetch(`http://localhost:${import.meta.env.VITE_PORT}/`)
+    fetch(`http://localhost:${import.meta.env.VITE_PORT}/`, {
+      headers: {
+        'Authorization': 'Basic ' + btoa('ash:ketchum')
+      }
+    })
       .then(response => response.text())
       .then(data => setMessage(data))
       .catch(error => console.error('Error fetching data:', error))
