@@ -25,6 +25,13 @@ type pokemonRequest struct {
 }
 
 func (s *pokemonServer) CreatePokemon(c *fiber.Ctx) error {
+	// Check is Content-Type is application/json
+	if !c.Is("json") {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"error": "Content-Type must be application/json",
+		})
+	}
+
 	ctx := context.Background()
 	var req pokemonRequest
 	if err := c.BodyParser(&req); err != nil {
@@ -70,6 +77,13 @@ func (s *pokemonServer) GetPokemonByID(c *fiber.Ctx) error {
 }
 
 func (s *pokemonServer) UpdatePokemon(c *fiber.Ctx) error {
+	// Check is Content-Type is application/json
+	if !c.Is("json") {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"error": "Content-Type must be application/json",
+		})
+	}
+
 	ctx := context.Background()
 	id, err := strconv.Atoi(c.Params("id"))
 	if err != nil {

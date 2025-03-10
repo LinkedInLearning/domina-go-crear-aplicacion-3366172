@@ -25,6 +25,13 @@ type battleRequest struct {
 }
 
 func (s *battleServer) CreateBattle(c *fiber.Ctx) error {
+	// Check is Content-Type is application/json
+	if !c.Is("json") {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"error": "Content-Type must be application/json",
+		})
+	}
+
 	ctx := context.Background()
 	var req battleRequest
 	if err := c.BodyParser(&req); err != nil {
@@ -74,6 +81,13 @@ func (s *battleServer) GetBattleByID(c *fiber.Ctx) error {
 }
 
 func (s *battleServer) UpdateBattle(c *fiber.Ctx) error {
+	// Check is Content-Type is application/json
+	if !c.Is("json") {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"error": "Content-Type must be application/json",
+		})
+	}
+
 	ctx := context.Background()
 	id, err := strconv.Atoi(c.Params("id"))
 	if err != nil {
