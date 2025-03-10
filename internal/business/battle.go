@@ -1,6 +1,7 @@
 package business
 
 import (
+	"fmt"
 	"pokemon-battle/internal/models"
 )
 
@@ -72,6 +73,8 @@ func attack(dice Dice, attacker *models.Pokemon, defender *models.Pokemon) {
 	// Calculate defense value (base defense + dice roll)
 	defenseRoll := dice.Roll()
 	totalDefense := defender.Defense + defenseRoll
+
+	fmt.Printf("%s attacks %s: attack is %d, defense is %d\n", attacker.Name, defender.Name, totalAttack, totalDefense)
 
 	// If attack beats defense, reduce defender's HP
 	if totalAttack > totalDefense {
