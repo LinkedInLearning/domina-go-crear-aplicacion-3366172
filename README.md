@@ -28,7 +28,7 @@ Este repositorio contiene una única rama (branch) con el contenido de los víde
 Echa un vistazo a mis otros cursos en [LinkedIn Learning](https://www.linkedin.com/learning/instructors/manuel-de-la-pena).
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
-[lil-course-url]: https://www.linkedin.com
-[lil-thumbnail-url]: https:
+[lil-course-url]: https://www.linkedin.com/learning/domina-go-aprende-a-crear-una-aplicacion
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D4E0DAQHRYatNdu1-Iw/learning-public-crop_675_1200/B4EZX1nzD0GYAY-/0/1743582606176?e=2147483647&v=beta&t=m3NpmoY5z5-ClBv7rX0FaHZqeyUs_-lJdQC0Q4OlE0c
 
 [1]: # (End of ES-Instruction ###############################################################################################)
